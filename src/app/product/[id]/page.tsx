@@ -6,11 +6,6 @@ import Link from "next/link"
 // import { Search, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
-interface ProductPageProps {
-  params: {
-    id: string;
-  };
-}
 
 interface Product {
     id: string;
@@ -319,7 +314,7 @@ const sampleProducts: Product[] = [
     },
   ];
 
-export default function ProductPage({ params }: ProductPageProps) {
+export default function ProductPage({ params }: { params: { id: string } }) {
   const { id } = params;
   // 模擬獲取數據（這裡可以替換為真實 API 請求）
   const findProductById = (id: string) => {
