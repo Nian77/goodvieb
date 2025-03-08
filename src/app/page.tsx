@@ -7,8 +7,10 @@
 // 商品庫存
 // 更新時間
 
+import { Agent } from "http";
 import ProductGrid from "../../components/product-grid";
 
+// 商品
 export default function ProductPage() {
   return (
     <div className="container mx-auto py-6 px-4">
