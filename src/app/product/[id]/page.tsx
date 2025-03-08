@@ -314,107 +314,68 @@ const sampleProducts: Product[] = [
     },
   ];
 
-export default async  function ProductPage({ params }: { params: { id: string } }) {
-  const { id } = params;
-  // 模擬獲取數據（這裡可以替換為真實 API 請求）
-  const findProductById = (id: string) => {
-    return sampleProducts.find(product => product.id === id);
-  };
-
-  const product = findProductById(id);
-
-  if (!product) {
-    return notFound(); // 如果找不到產品，則返回 404
-  }
-
-  return (
-    <>
-    <header className="border-b">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* 行動版選單按鈕 */}
-          <Button variant="ghost" size="icon" className="md:hidden">
-            {/* <Menu className="h-6 w-6" /> */}
-          </Button>
-
-          {/* Logo */}
-          <Link href="http://localhost:3000/" className="text-xl font-bold">
-            GoodVibe商品評價網
-          </Link>
-
-          {/* 搜尋欄 */}
-          {/* <div className="hidden md:flex items-center max-w-sm flex-1 mx-4">
-            <div className="relative w-full">
-              <Input placeholder="搜尋商品" className="pr-8" />
-              <Search className="absolute right-2 top-2.5 h-4 w-4 text-muted-foreground" />
+  export default async function ProductPage({ params }: { params: { id: string } }) {
+    const { id } = params;
+    // 模擬獲取數據（這裡可以替換為真實 API 請求）
+    const findProductById = (id: string) => {
+      return sampleProducts.find(product => product.id === id);
+    };
+  
+    const product = findProductById(id);
+  
+    if (!product) {
+      return notFound(); // 如果找不到產品，則返回 404
+    }
+  
+    return (
+      <>
+        <header className="border-b">
+          <div className="container mx-auto px-4 py-3">
+            <div className="flex items-center justify-between">
+              <Button variant="ghost" size="icon" className="md:hidden">
+                {/* Mobile menu button */}
+              </Button>
+              <Link href="http://localhost:3000/" className="text-xl font-bold">
+                GoodVibe商品評價網
+              </Link>
             </div>
-          </div> */}
-        </div>
-
-        {/* 分類選單 */}
-        <div className="hidden md:flex items-center space-x-6 text-sm mt-2">
-          <Link href="http://localhost:3000/" className="text-muted-foreground hover:text-foreground">
-            熱門商品
-          </Link>
-          {/* <Link href="#" className="text-muted-foreground hover:text-foreground">
-            電腦筆電
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground">
-            家電用品
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground">
-            精品配件
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-foreground">
-            限時特價
-          </Link> */}
-        </div>
-      </div>
-    </header>
-    <div className="max-w-4xl mx-auto p-4">
-      <Card className="overflow-hidden">
-        <div className="grid md:grid-cols-2 gap-6 p-6">
-          {/* 左側產品圖片 */}
-          <div className="relative">
-
-            <Image
-              src={product.imageUrl}
-              alt="iPhone 16 Pro"
-              width={500}
-              height={500}
-              className="object-contain w-full h-auto"
-            />
+            <div className="hidden md:flex items-center space-x-6 text-sm mt-2">
+              <Link href="http://localhost:3000/" className="text-muted-foreground hover:text-foreground">
+                熱門商品
+              </Link>
+            </div>
           </div>
-
-          {/* 右側產品資訊 */}
-          <div className="flex flex-col justify-between">
-            {/* 產品標題與促銷資訊 */}
-            <div>
-              {/* <div className="bg-red-500 text-white p-3 mb-4 flex items-center">
-                <span className="mr-2">⚡</span>
-                <span>限時瘋搶，行有品活動時間有限，敬請把握！</span>
-              </div> */}
-
-              <div className="mb-4">
-                <p className="text-red-500 text-sm">{product.format}</p>
-                <h1 className="text-2xl font-bold text-blue-500">{product.name}</h1>
+        </header>
+        <div className="max-w-4xl mx-auto p-4">
+          <Card className="overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-6 p-6">
+              <div className="relative">
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  width={500}
+                  height={500}
+                  className="object-contain w-full h-auto"
+                />
               </div>
-
-              <div className="mb-6">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-red-500 text-3xl font-bold">${product.price}</span>
-                  {/* <span className="text-gray-400 line-through">$999</span> */}
+              <div className="flex flex-col justify-between">
+                <div>
+                  <div className="mb-4">
+                    <p className="text-red-500 text-sm">{product.format}</p>
+                    <h1 className="text-2xl font-bold text-blue-500">{product.name}</h1>
+                  </div>
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-red-500 text-3xl font-bold">${product.price}</span>
+                    </div>
+                  </div>
+                  <span>{product.itemText}</span>
                 </div>
               </div>
-              {/* 產品特點 */}
-                <span>{product.itemText}</span>
             </div>
-          </div>
+          </Card>
         </div>
-      </Card>
-    </div>
-    </>
-    
-)
- 
-}
+      </>
+    );
+  }
+  
