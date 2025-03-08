@@ -314,7 +314,7 @@ const sampleProducts: Product[] = [
     },
   ];
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+export default async  function ProductPage({ params }: { params: { id: string } }) {
   const { id } = params;
   // 模擬獲取數據（這裡可以替換為真實 API 請求）
   const findProductById = (id: string) => {
