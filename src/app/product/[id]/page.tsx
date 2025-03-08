@@ -7,6 +7,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
 
+
 interface Product {
     id: string;
     name: string;
@@ -314,8 +315,17 @@ const sampleProducts: Product[] = [
     },
   ];
 
-  export default async function ProductPage({ params }: { params: { id: string } }) {
-    const { id } = params;
+  
+
+  export default async function ProductPage({
+    params,
+  }: {
+    params: Promise<{ id: string }>
+  }) {
+    const { id } = await params
+ 
+  
+
     // 模擬獲取數據（這裡可以替換為真實 API 請求）
     const findProductById = (id: string) => {
       return sampleProducts.find(product => product.id === id);
@@ -328,6 +338,7 @@ const sampleProducts: Product[] = [
     }
   
     return (
+
       <>
         <header className="border-b">
           <div className="container mx-auto px-4 py-3">
