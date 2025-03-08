@@ -3,9 +3,9 @@ import { Card } from "@/components/ui/card";
 import Image from "next/image";
 // 選單
 import Link from "next/link"
-import { Search, Menu } from "lucide-react"
+// import { Search, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+// import { Input } from "@/components/ui/input"
 interface ProductPageProps {
   params: { id: string };
 }
@@ -22,9 +22,9 @@ interface Product {
     format: string;
   }
   
-  interface ProductGridProps {
-    products: Product[];
-  }
+  // interface ProductGridProps {
+  //   products: Product[];
+  // }
 
 const sampleProducts: Product[] = [
     {
@@ -338,7 +338,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         <div className="flex items-center justify-between">
           {/* 行動版選單按鈕 */}
           <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-6 w-6" />
+            {/* <Menu className="h-6 w-6" /> */}
           </Button>
 
           {/* Logo */}

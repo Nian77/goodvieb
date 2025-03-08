@@ -1,8 +1,8 @@
 // 選單
 import Link from "next/link"
-import { Search, Menu } from "lucide-react"
+// import { Search, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+// import { Input } from "@/components/ui/input"
 // 商品編號
 // 商品名稱
 // 商品價格
@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input"
 // 商品庫存
 // 更新時間
 
-import { Agent } from "http";
+// import { Agent } from "http";
 import ProductGrid from "../../components/product-grid";
 
 // 商品
@@ -24,7 +24,7 @@ export default function ProductPage() {
         <div className="flex items-center justify-between">
           {/* 行動版選單按鈕 */}
           <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="h-6 w-6" />
+            {/* <Menu className="h-6 w-6" /> */}
           </Button>
 
           {/* Logo */}

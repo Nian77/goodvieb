@@ -13,8 +13,8 @@ interface ProductCardProps {
   thumbnailUrl?: string;
   rating: number;
   soldOut?: boolean;
-  stock?: number;
-  updatedAt?: Date;
+  // stock?: number;
+  // updatedAt?: Date;
 }
 
 export default function ProductCard({
@@ -25,8 +25,8 @@ export default function ProductCard({
   imageUrl,
   rating,
   soldOut,
-  stock,
-  updatedAt,
+  // stock,
+  // updatedAt,
 }: ProductCardProps) {
   return (
     <Card className="overflow-hidden border rounded-md h-full flex flex-col">
