@@ -7,7 +7,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
 interface ProductPageProps {
-  params: { id: string };
+  params: {
+    id: string;
+  };
 }
 
 interface Product {
@@ -319,7 +321,6 @@ const sampleProducts: Product[] = [
 
 export default function ProductPage({ params }: ProductPageProps) {
   const { id } = params;
-
   // 模擬獲取數據（這裡可以替換為真實 API 請求）
   const findProductById = (id: string) => {
     return sampleProducts.find(product => product.id === id);
