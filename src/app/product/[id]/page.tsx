@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
-
+// 選單
+import Link from "next/link"
+import { Search, Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 interface ProductPageProps {
   params: { id: string };
 }
@@ -56,8 +60,8 @@ const sampleProducts: Product[] = [
       price: 899,
       imageUrl: "/S__34922507_0.jpg",
       rating: 5.0,
-      itemText:"8人組",
-      format:"刷頭磨圓不傷琺瑯質,杯型設計完全包裹牙齒,顯示性能刷毛及時提醒更換",
+      format:"8人組",
+      itemText:"刷頭磨圓不傷琺瑯質,杯型設計完全包裹牙齒,顯示性能刷毛及時提醒更換",
     },
     {
       id: "148930",
@@ -328,6 +332,49 @@ export default function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
+    <>
+    <header className="border-b">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex items-center justify-between">
+          {/* 行動版選單按鈕 */}
+          <Button variant="ghost" size="icon" className="md:hidden">
+            <Menu className="h-6 w-6" />
+          </Button>
+
+          {/* Logo */}
+          <Link href="http://localhost:3000/" className="text-xl font-bold">
+            GoodVibe商品評價網
+          </Link>
+
+          {/* 搜尋欄 */}
+          {/* <div className="hidden md:flex items-center max-w-sm flex-1 mx-4">
+            <div className="relative w-full">
+              <Input placeholder="搜尋商品" className="pr-8" />
+              <Search className="absolute right-2 top-2.5 h-4 w-4 text-muted-foreground" />
+            </div>
+          </div> */}
+        </div>
+
+        {/* 分類選單 */}
+        <div className="hidden md:flex items-center space-x-6 text-sm mt-2">
+          <Link href="http://localhost:3000/" className="text-muted-foreground hover:text-foreground">
+            熱門商品
+          </Link>
+          {/* <Link href="#" className="text-muted-foreground hover:text-foreground">
+            電腦筆電
+          </Link>
+          <Link href="#" className="text-muted-foreground hover:text-foreground">
+            家電用品
+          </Link>
+          <Link href="#" className="text-muted-foreground hover:text-foreground">
+            精品配件
+          </Link>
+          <Link href="#" className="text-muted-foreground hover:text-foreground">
+            限時特價
+          </Link> */}
+        </div>
+      </div>
+    </header>
     <div className="max-w-4xl mx-auto p-4">
       <Card className="overflow-hidden">
         <div className="grid md:grid-cols-2 gap-6 p-6">
@@ -370,6 +417,8 @@ export default function ProductPage({ params }: ProductPageProps) {
         </div>
       </Card>
     </div>
+    </>
+    
 )
  
 }
