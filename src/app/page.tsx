@@ -28,7 +28,7 @@ export default function ProductPage() {
           </Button>
 
           {/* Logo */}
-          <Link href="http://localhost:3000/" className="text-xl font-bold">
+          <Link href="https://goodvieb-nians-projects-a53712fd.vercel.app/" className="text-xl font-bold">
             GoodVibe商品評價網
           </Link>
 
@@ -43,8 +43,8 @@ export default function ProductPage() {
 
         {/* 分類選單 */}
         <div className="hidden md:flex items-center space-x-6 text-sm mt-2">
-          <Link href="http://localhost:3000/" className="text-muted-foreground hover:text-foreground">
-            熱門商品
+          <Link href="https://goodvieb-nians-projects-a53712fd.vercel.app/" className="text-muted-foreground hover:text-foreground">
+            首頁
           </Link>
           {/* <Link href="#" className="text-muted-foreground hover:text-foreground">
             電腦筆電
